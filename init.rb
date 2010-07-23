@@ -34,7 +34,6 @@ ignore(/\.sw?$/)
 ignore(/~$/)
 
 configuration_option 'GIT_ROOT', 'string',
-    :default => "git://gitorious.com/orocos-toolchain"
-    :doc => "The root under which git packages will be searched for" do |path|
-end
+    :default => "git://gitorious.com/orocos",
+    :doc => "The root under which git packages will be searched for"
 
