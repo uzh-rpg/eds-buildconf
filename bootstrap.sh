@@ -13,7 +13,7 @@ if ! test -f $PWD/autoproj_bootstrap; then
     $DOWNLOADER http://doudou.github.com/autoproj/autoproj_bootstrap
 fi
 
-ruby autoproj_bootstrap git git://gitorious.org/orocos-toolchain/build.git
+ruby autoproj_bootstrap $@ git git://gitorious.org/orocos-toolchain/build.git
 . $PWD/env.sh
 autoproj update
 autoproj fast-build
