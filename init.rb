@@ -33,10 +33,17 @@ ignore(/\.sw?$/)
 # Ignore the numerous backup files
 ignore(/~$/)
 
+gitorious_short_doc = "Access method to gitorious (git, http or ssh)"
+gitorious_long_doc = [
+    "Access method to gitorious (git, http or ssh)",
+    "Use 'ssh' only if you have a gitorious account and have commit",
+    "rights on the Orocos projects"]
+
+
 configuration_option 'GITORIOUS', 'string',
     :default => "git",
     :values => ["http", "ssh"],
-    :doc => "Access method to gitorious (git, http or ssh)" do |value|
+    :doc => gitorious_long_doc, :short_doc => gitorious_short_doc do |value|
 
     if value == "git"
         Autoproj.change_option("GITORIOUS_ROOT", "git://gitorious.org/")
