@@ -1,6 +1,6 @@
 package_sets:
    - type: git
-     url: $GIT_ROOT-toolchain/autoproj.git
+     url: $GITORIOUS_ROOT/orocos-toolchain/autoproj.git
 
 layout:
    - typelib

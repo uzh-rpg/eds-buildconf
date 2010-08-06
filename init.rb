@@ -33,7 +33,21 @@ ignore(/\.sw?$/)
 # Ignore the numerous backup files
 ignore(/~$/)
 
-configuration_option 'GIT_ROOT', 'string',
-    :default => "git://gitorious.com/orocos",
-    :doc => "The root under which git packages will be searched for"
+configuration_option 'GITORIOUS', 'string',
+    :default => "git",
+    :values => ["http", "ssh"],
+    :doc => "Access method to gitorious (git, http or ssh)" do |value|
+
+    if value == "git"
+        Autoproj.change_option("GITORIOUS_ROOT", "git://gitorious.org/")
+    elsif value == "http"
+        Autoproj.change_option("GITORIOUS_ROOT", "http://git.gitorious.org/")
+    elsif value == "ssh"
+        Autoproj.change_option("GITORIOUS_ROOT", "git@gitorious.com:")
+    end
+
+    value
+end
+
+Autoproj.user_config('GITORIOUS')
 
