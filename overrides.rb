@@ -6,3 +6,5 @@
 #
 # Autobuild::Package['rtt'].define "BUILD_TESTING", "ON"
 
+
+env_set 'TYPELIB_USE_GCCXML', '1'
