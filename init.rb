@@ -1,5 +1,5 @@
-# Write in this file customization code that will get executed before all the
-# soures are loaded.
+# Write in this file customization code that will get executed before 
+# autoproj is loaded.
 
 # Set the path to 'make'
 # Autobuild.commands['make'] = '/path/to/ccmake'
@@ -17,10 +17,15 @@
 # and env_set:
 #
 # env_add 'PATH', "/path/to/my/tool"
-# env_set 'VAR', "value"
+# env_set 'CMAKE_PREFIX_PATH', "/opt/boost;/opt/xerces"
+# env_set 'CMAKE_INSTALL_PATH', "/opt/orocos"
 #
-# Variables set like this are exported in the generated env.sh scripts.
+# NOTE: Variables set like this are exported in the generated 'env.sh' script.
+#
 
+#
+# Orocos Specific ignore rules
+#
 # Ignore log files generated from the orocos/orogen components
 ignore(/\.log$/, /\.ior$/, /\.idx$/)
 # Ignore all text files except CMakeLists.txt
@@ -33,6 +38,10 @@ ignore(/\.sw?$/)
 # Ignore the numerous backup files
 ignore(/~$/)
 
+#
+# Adds the GITORIOUS option to autoproj.
+# Set using the config.yml file.
+#
 gitorious_long_doc = [
     "Access method to gitorious (git, http or ssh)",
     "Use 'ssh' only if you have a gitorious account and have commit rights",

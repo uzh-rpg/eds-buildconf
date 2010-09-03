@@ -6,5 +6,9 @@
 #
 # Autobuild::Package['rtt'].define "BUILD_TESTING", "ON"
 
+# Package specific prefix:
+# Autobuild::Package['rtt'].prefix='/opt/autoproj/2.0'
+#
+# See config.yml to set the prefix:/opt/autoproj/2.0 globally for all packages.
 
 env_set 'TYPELIB_USE_GCCXML', '1'
