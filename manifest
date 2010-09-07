@@ -1,5 +1,6 @@
 package_sets:
    - type: git
+     branch: toolchain-2.0
      url: $GITORIOUS_ROOT/orocos-toolchain/autoproj.git
 
 layout:
