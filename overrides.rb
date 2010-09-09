@@ -12,3 +12,6 @@
 # See config.yml to set the prefix:/opt/autoproj/2.0 globally for all packages.
 
 env_set 'TYPELIB_USE_GCCXML', '1'
+Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
+Autoproj.env_add_path 'CMAKE_PREFIX_PATH', Autobuild::Package['rtt'].prefix
+
