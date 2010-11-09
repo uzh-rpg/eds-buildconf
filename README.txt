@@ -6,6 +6,17 @@ Since everything is CMake based, environment variables such as
 CMAKE_PREFIX_PATH are always picked up. You can set them
 in init.rb too, which will copy them to your env.sh script.
 
+Because of cmake's aggressive caching behaviour, manual options
+given to cmake will be overriden by autoproj later on. To make
+such options permanent, add
+
+  package('package_name').define "OPTION", "VALUE"
+
+in overrides.rb. For instance, to set CMAKE_BUILD_TYPE for the rtt
+package, do
+
+  package('rtt').define "CMAKE_BUILD_TYPE", "Debug"
+
 - Config files
 There are various file that influence your build:
 
@@ -20,14 +31,11 @@ There are various file that influence your build:
 
 - Configuration options
 
-config.yml:  Your primary source for changing build settings.
-	     Warning: each run, all comments from this file are
-	     removed. So if you comment out a line with '#', it
-	     will not be there any more after the next run.
-	     Common options:
-	     	    prefix: /opt/orocos
-		    rtt_corba: true
-		    rtt_target: gnulinux
+config.yml:  Save build configuration. You should not change it
+             manually. If you need to change an option, run an
+             autoproj operation with --reconfigure, as for
+             instance
+                  autoproj build --reconfigure
 
 overrides.yml:
 	     Override branch information for specific packages.
