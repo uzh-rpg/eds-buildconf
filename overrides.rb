@@ -11,5 +11,4 @@
 #
 # See config.yml to set the prefix:/opt/autoproj/2.0 globally for all packages.
 
-env_set 'TYPELIB_USE_GCCXML', '1'
 
