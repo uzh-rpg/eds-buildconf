@@ -6,3 +6,7 @@
 #   - rtt
 #     branch: test
 #  
+
+overrides:
+    - orogen:
+      branch: rise
