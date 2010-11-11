@@ -1,15 +1,21 @@
 package_sets:
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/orocos-toolchain/autoproj.git
+     url: $GITORIOUS_ROOT/rise-toolchain/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rise-toolchain/autoproj.git
+   - type: git
+     branch: master
+     url: $GITORIOUS_ROOT/rise-drivers/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rise-drivers/autoproj.git
 
+# Layout. Note that the rise.base, rise.toolchain and orocos.toolchain sets are
+# imported by other rise sets.
 layout:
-   - typelib
-   - utilrb
-   - utilmm
-   - rtt
-   - orogen
-   - ocl
+   - rise.base
+   - rise.drivers
+   - rise.toolchain
+   - tools:
+      - orocos.toolchain # imported by rise packages
 
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
