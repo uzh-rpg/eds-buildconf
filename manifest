@@ -1,36 +1,37 @@
 package_sets:
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/rise-toolchain/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rise-toolchain/autoproj.git
+     url: $GITORIOUS_ROOT/rock-toolchain/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock-toolchain/autoproj.git
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/rise-drivers/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rise-drivers/autoproj.git
+     url: $GITORIOUS_ROOT/rock-drivers/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock-drivers/autoproj.git
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/rise-control/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rise-control/autoproj.git
+     url: $GITORIOUS_ROOT/rock-control/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock-control/autoproj.git
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/rise-slam/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rise-slam/autoproj.git
+     url: $GITORIOUS_ROOT/rock-slam/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock-slam/autoproj.git
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/rise-planning/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rise-planning/autoproj.git
+     url: $GITORIOUS_ROOT/rock-planning/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock-planning/autoproj.git
 
-# Layout. Note that the rise.base, rise.toolchain and orocos.toolchain sets are
-# imported by other rise sets.
+# Layout. Note that the rock.base, rock.toolchain and orocos.toolchain sets are
+# imported by other rock sets.
 layout:
-   - rise.base
-   - rise.drivers
-   - rise.control
-   - rise.planning
-   - rise.slam
-   - rise.toolchain
+   - rock.base
+   - rock.drivers
+   - rock.control
+   - rock.planning
+   - rock.slam
+   - rock.toolchain
    - tools:
-      - orocos.toolchain # imported by rise packages
+      - orocos.toolchain # imported by rock packages
+
 
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
