@@ -7,12 +7,27 @@ package_sets:
      branch: master
      url: $GITORIOUS_ROOT/rise-drivers/autoproj.git
      push_to: $GITORIOUS_PUSH_ROOT/rise-drivers/autoproj.git
+   - type: git
+     branch: master
+     url: $GITORIOUS_ROOT/rise-control/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rise-control/autoproj.git
+   - type: git
+     branch: master
+     url: $GITORIOUS_ROOT/rise-slam/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rise-slam/autoproj.git
+   - type: git
+     branch: master
+     url: $GITORIOUS_ROOT/rise-planning/autoproj.git
+     push_to: $GITORIOUS_PUSH_ROOT/rise-planning/autoproj.git
 
 # Layout. Note that the rise.base, rise.toolchain and orocos.toolchain sets are
 # imported by other rise sets.
 layout:
    - rise.base
    - rise.drivers
+   - rise.control
+   - rise.planning
+   - rise.slam
    - rise.toolchain
    - tools:
       - orocos.toolchain # imported by rise packages
