@@ -14,7 +14,9 @@ if ! test -f $PWD/autoproj_bootstrap; then
 fi
 
 ruby autoproj_bootstrap $@ git git://gitorious.org/rock/build-all.git branch=master
-. $PWD/env.sh
-autoproj update
-autoproj fast-build
+if test "x$@" != "xlocaldev"; then
+    . $PWD/env.sh
+    autoproj update
+    autoproj fast-build
+fi
 
