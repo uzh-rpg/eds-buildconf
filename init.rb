@@ -68,3 +68,5 @@ end
 Autoproj.change_option("GITORIOUS_PUSH_ROOT", "git@gitorious.org:")
 Autoproj.user_config('GITORIOUS')
 
+Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
+
