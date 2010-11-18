@@ -32,6 +32,8 @@ layout:
    - tools:
       - orocos.toolchain # imported by rock packages
 
+exclude_packages:
+    - ocl
 
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
