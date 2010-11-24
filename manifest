@@ -1,36 +1,18 @@
 package_sets:
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/rock-toolchain/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rock-toolchain/autoproj.git
+     url: $GITORIOUS_ROOT/rock-toolchain/package_set.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock-toolchain/package_set.git
    - type: git
      branch: master
-     url: $GITORIOUS_ROOT/rock-drivers/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rock-drivers/autoproj.git
-   - type: git
-     branch: master
-     url: $GITORIOUS_ROOT/rock-control/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rock-control/autoproj.git
-   - type: git
-     branch: master
-     url: $GITORIOUS_ROOT/rock-slam/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rock-slam/autoproj.git
-   - type: git
-     branch: master
-     url: $GITORIOUS_ROOT/rock-planning/autoproj.git
-     push_to: $GITORIOUS_PUSH_ROOT/rock-planning/autoproj.git
+     url: $GITORIOUS_ROOT/rock/package_set.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock/package_set.git
 
 # Layout. Note that the rock.base, rock.toolchain and orocos.toolchain sets are
 # imported by other rock sets.
 layout:
-   - rock.base
-   - rock.drivers
-   - rock.control
-   - rock.planning
-   - rock.slam
    - rock.toolchain
-   - tools:
-      - orocos.toolchain # imported by rock packages
+   - rock
 
 exclude_packages:
     - ocl
