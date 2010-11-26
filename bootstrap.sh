@@ -10,7 +10,7 @@ if ! test -f $PWD/autoproj_bootstrap; then
         echo "download the following script yourself, and re-run this script"
         exit 1
     fi
-    $DOWNLOADER http://doudou.github.com/autoproj/autoproj_bootstrap
+    $DOWNLOADER http://www.rock-robotics.org/autoproj_bootstrap
 fi
 
 ruby autoproj_bootstrap $@ git git://gitorious.org/rock/build-all.git branch=master
