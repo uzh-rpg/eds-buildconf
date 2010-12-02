@@ -65,8 +65,22 @@ configuration_option 'GITORIOUS', 'string',
     value
 end
 
+configuration_option 'ROCK_FLAVOR', 'string',
+    :default => 'stable',
+    :values => ['stable', 'next', 'master'],
+    :doc => [
+        "Which flavor of Rock do you want to use ?",
+        "The 'stable' flavor is not updated often, but will contain well-tested code",
+        "The 'next' flavor is updated more often, and might contain less tested code",
+        "it is updated from 'master' to test new features before they get pushed in 'stable'",
+        "Finally, 'master' is where the development takes place. It should generally be in",
+        "a good state, but will break every once in a while",
+        "",
+        "See http://rock-robotics.org/startup/releases.html for more information"]
+
 Autoproj.change_option("GITORIOUS_PUSH_ROOT", "git@gitorious.org:")
 Autoproj.user_config('GITORIOUS')
+Autoproj.user_config('ROCK_FLAVOR')
 
 Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
 
