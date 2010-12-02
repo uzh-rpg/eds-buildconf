@@ -13,7 +13,6 @@ package_sets:
 layout:
    - rock.base
    - rock.toolchain
-   - rock
 
 exclude_packages:
     - ocl
