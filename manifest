@@ -11,11 +11,11 @@ package_sets:
 # Layout. Note that the rock.base, rock.toolchain and orocos.toolchain sets are
 # imported by other rock sets.
 layout:
-   - rock.base
    - rock.toolchain
+   - rock
 
 exclude_packages:
-    - ocl
+   - ocl
 
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
