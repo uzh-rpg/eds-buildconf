@@ -1,5 +1,7 @@
 #! /bin/sh
 
+set -e
+
 if ! test -f $PWD/autoproj_bootstrap; then
     if which wget > /dev/null; then
         DOWNLOADER=wget
