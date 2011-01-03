@@ -11,7 +11,3 @@
 #
 # See config.yml to set the prefix:/opt/autoproj/2.0 globally for all packages.
 
-if package_selected?('rtt')
-    package('rtt').define "PLUGINS_ENABLE_SCRIPTING", "OFF"
-end
-

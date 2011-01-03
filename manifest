@@ -14,9 +14,6 @@ layout:
    - rock.toolchain
    - rock
 
-exclude_packages:
-   - ocl
-
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
 # the packages of the rubim.orocos package set will be built, in the tools/
