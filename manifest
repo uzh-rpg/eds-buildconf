@@ -11,6 +11,7 @@ package_sets:
 # Layout. Note that the rock.base, rock.toolchain and orocos.toolchain sets are
 # imported by other rock sets.
 layout:
+   - rock.base
    - rock.toolchain
    - rock
 
