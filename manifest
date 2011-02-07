@@ -3,17 +3,12 @@ package_sets:
      branch: master
      url: $GITORIOUS_ROOT/rock-toolchain/package_set.git
      push_to: $GITORIOUS_PUSH_ROOT/rock-toolchain/package_set.git
-   - type: git
-     branch: master
-     url: $GITORIOUS_ROOT/rock/package_set.git
-     push_to: $GITORIOUS_PUSH_ROOT/rock/package_set.git
 
 # Layout. Note that the rock.base, rock.toolchain and orocos.toolchain sets are
 # imported by other rock sets.
 layout:
    - rock.base
    - rock.toolchain
-   - rock
 
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
