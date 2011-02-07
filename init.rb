@@ -23,8 +23,8 @@
 # NOTE: Variables set like this are exported in the generated 'env.sh' script.
 #
 
-require './autoproj/gitorious'
-handle_gitorious_server('GITORIOUS', 'gitorious.com')
+require 'autoproj/gitorious'
+Autoproj.gitorious_server_configuration('GITORIOUS', 'gitorious.org')
 
 require './autoproj/rock'
 rock_autoproj_init
