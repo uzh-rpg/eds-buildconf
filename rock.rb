@@ -1,4 +1,4 @@
-def rock_autoproj_init
+def rock_autoproj_init(flavor)
 
     #
     # Orocos Specific ignore rules
@@ -14,25 +14,7 @@ def rock_autoproj_init
     ignore(/\.sw?$/)
     # Ignore the numerous backup files
     ignore(/~$/)
-    configuration_option 'ROCK_FLAVOR', 'string',
-        :default => 'stable',
-        :values => ['stable', 'next', 'master'],
-        :doc => [
-            "Which flavor of Rock do you want to use ?",
-            "The 'stable' flavor is not updated often, but will contain well-tested code",
-            "The 'next' flavor is updated more often, and might contain less tested code",
-            "it is updated from 'master' to test new features before they get pushed in 'stable'",
-            "Finally, 'master' is where the development takes place. It should generally be in",
-            "a good state, but will break every once in a while",
-            "",
-            "See http://rock-robotics.org/startup/releases.html for more information"]
 
-    if Autoproj.has_config_key?('ROCK_FLAVOR') && Autoproj.user_config('ROCK_FLAVOR') != 'master'
-        STDERR.puts "  Due to the current status of Rock, the stable and next flavors are disabled right now"
-        STDERR.puts "  I'll switch to master"
-        STDERR.print "  Press ENTER to continue"
-        STDIN.readline
-    end
-    Autoproj.change_option('ROCK_FLAVOR', 'master')
+    Autoproj.change_option('ROCK_FLAVOR', flavor)
 end
 
