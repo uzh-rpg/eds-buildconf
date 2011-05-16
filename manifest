@@ -1,6 +1,6 @@
 package_sets:
    - type: git
-     branch: master
+     branch: $ROCK_FLAVOR
      url: $GITORIOUS_ROOT/rock-toolchain/package_set.git
      push_to: $GITORIOUS_PUSH_ROOT/rock-toolchain/package_set.git
 
