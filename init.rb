@@ -27,7 +27,7 @@ require 'autoproj/gitorious'
 Autoproj.gitorious_server_configuration('GITORIOUS', 'gitorious.org')
 
 require './autoproj/rock'
-rock_autoproj_init('master')
+rock_autoproj_init
 
 Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
 
