@@ -1,8 +1,5 @@
 package_sets:
-   - type: git
-     branch: $ROCK_FLAVOR
-     url: $GITORIOUS_ROOT/rock-toolchain/package_set.git
-     push_to: $GITORIOUS_PUSH_ROOT/rock-toolchain/package_set.git
+   - gitorious: rock-toolchain/package_set
 
 # Layout. Note that the rock.base, rock.toolchain and orocos.toolchain sets are
 # imported by other rock sets.
