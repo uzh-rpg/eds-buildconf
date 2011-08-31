@@ -7,6 +7,7 @@ package_sets:
 layout:
    - rock.base
    - rock.toolchain
+   - gui/vizkit
 
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
