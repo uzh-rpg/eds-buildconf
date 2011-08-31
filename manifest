@@ -1,5 +1,6 @@
 package_sets:
    - gitorious: rock-toolchain/package_set
+   - gitorious: rock/package_set
 
 # Layout. Note that the rock.base, rock.toolchain and orocos.toolchain sets are
 # imported by other rock sets.
