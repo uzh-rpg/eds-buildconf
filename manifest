@@ -20,6 +20,8 @@ layout:
 
   - gui/vizkit
   - gui/rock_widget_collection
+  - drivers/camera_prosilica
+  - drivers/orogen/camera_prosilica
 
 exclude_packages:
 
