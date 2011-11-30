@@ -1,0 +1,26 @@
+package_sets:
+   - type: git
+     url: $GITORIOUS_ROOT/rock-toolchain/package_set.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock-toolchain/package_set.git
+   - type: git
+     url: $GITORIOUS_ROOT/rock/package_set.git
+     push_to: $GITORIOUS_PUSH_ROOT/rock/package_set.git
+   - type: git
+     url: $SPACEGIT_ROOT/rock-dfki/package_set.git
+     push_to: $SPACEGIT_PUSH_ROOT/rock-dfki/package_set.git
+   - type: git
+     url: $SPACEGIT_ROOT/cmanipulator/package_set.git
+     push_to: $SPACEGIT_PUSH_ROOT/cmanipulator/package_set.git
+
+layout:
+  - dfki.cmanipulator 
+
+  - rock.toolchain
+  - rock.base
+
+  - gui/vizkit
+  - gui/rock_widget_collection
+
+exclude_packages:
+
+
