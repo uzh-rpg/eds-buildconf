@@ -1,0 +1,9 @@
+#! /bin/sh
+
+set -e
+sudo apt-get install ruby rubygems wget
+wget rock-robotics.org/autoproj_bootstrap
+ruby autoproj_bootstrap git git@spacegit.dfki.uni-bremen.de:/cmanipulator/buildconf.git
+. ./env.sh
+autoproj update
+autoproj build
