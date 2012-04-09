@@ -50,7 +50,7 @@ layout:
 # For instance, let's assume the orocos/rtt is already installed on your
 # machine. You would then simply do:
 #
-# ignored_packages:
+# ignore_packages:
 #   - orocos/rtt
 #
 
