@@ -15,5 +15,3 @@ layout:
    - rock.toolchain
    - gui/vizkit
 #  - rock.tutorials    # Uncomment to build all tutorials  
-
-
