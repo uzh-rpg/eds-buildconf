@@ -18,11 +18,11 @@ fi
 echo "Do you want to use the git protocol to access the build configuration?"
 echo "If the protocol is blocked by your network answer with no."
 
-# Check and interprete answer of "Proceed [y|n]"
+# Check and interprete answer of "[y|n]"
 ANSWER=""
 until [ "$ANSWER" = "y" ] || [ "$ANSWER" = "n" ] 
 do
-	echo "Proceed [y|n]"
+	echo "Use git protocol? [y|n]"
 	read ANSWER
 	ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
 done
