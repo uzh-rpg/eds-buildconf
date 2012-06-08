@@ -15,7 +15,24 @@ if ! test -f $PWD/autoproj_bootstrap; then
     $DOWNLOADER http://rock-robotics.org/autoproj_bootstrap
 fi
 
-ruby autoproj_bootstrap $@ git git://gitorious.org/rock/buildconf.git push_to=git@gitorious.org:rock/buildconf.git branch=master
+echo "Do you want to use the git protocol to access the build configuration?"
+echo "If the protocol is blocked by your network answer with no."
+
+# Check and interprete answer of "Proceed [y|n]"
+ANSWER=""
+until [ "$ANSWER" = "y" ] || [ "$ANSWER" = "n" ] 
+do
+	echo "Proceed [y|n]"
+	read ANSWER
+	ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
+done
+
+if [ "$ANSWER" = "y" ]; then
+    ruby autoproj_bootstrap $@ git git://gitorious.org/rock/buildconf.git push_to=git@gitorious.org:rock/buildconf.git branch=master
+else
+    ruby autoproj_bootstrap $@ git http://gitorious.org/rock/buildconf.git push_to=git@gitorious.org:rock/buildconf.git branch=master
+fi
+
 if test "x$@" != "xlocaldev"; then
     . $PWD/env.sh
     autoproj update
