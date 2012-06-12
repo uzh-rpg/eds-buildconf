@@ -30,7 +30,7 @@ done
 if [ "$ANSWER" = "y" ]; then
     ruby autoproj_bootstrap $@ git git://gitorious.org/rock/buildconf.git push_to=git@gitorious.org:rock/buildconf.git branch=master
 else
-    ruby autoproj_bootstrap $@ git http://gitorious.org/rock/buildconf.git push_to=git@gitorious.org:rock/buildconf.git branch=master
+    ruby autoproj_bootstrap $@ git http://git.gitorious.org/rock/buildconf.git push_to=git@gitorious.org:rock/buildconf.git branch=master
 fi
 
 if test "x$@" != "xlocaldev"; then
