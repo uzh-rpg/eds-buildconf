@@ -17,36 +17,40 @@ package, do
 
   package('rtt').define "CMAKE_BUILD_TYPE", "Debug"
 
-- Config files
-There are various file that influence your build:
+- Directory structure
 
-*.yml files: are simple 'key: value' pairs in the YAML format to set
-             config options. This list is limited to what autoproj
-	     knows.
+The autoproj/ directory (this directory) contains the files and configuration
+that defines the whole build. The manifest file
 
-*.rb  files: are ruby scripts that can influence any part of the 
-             autoproj program, without modifying autoproj itself.
-             This is only for advanced users that understand ruby
-	     and the internals of autoproj.
+- Files in the autoproj/ directory
 
-- Configuration options
+manifest:
+  Simple key-value pair file in the YAML format. It lists sources for "package
+  sets", other autoproj configuration directories in which packages have been
+  declared for you to reuse (package_sets section). It also lists the packages
+  that you actually want to build (layout section)
 
-config.yml:  Save build configuration. You should not change it
-             manually. If you need to change an option, run an
-             autoproj operation with --reconfigure, as for
-             instance
-                  autoproj build --reconfigure
+remotes/:
+  contains a checkout of the package sets listed in the manifest. You should not
+  have to go in there unless you are yourself developing a package set.
+
+config.yml:
+  Autoproj can be parametrized by build options. This file is where your
+  previous choices for these options are saved. You should not change it manually.
+  If you need tou change an option, run
+    autoproj reconfigure
 
 overrides.yml:
-	     Override branch information for specific packages.
-	     Most people leave this to the default, unless they
-	     want to use a feature from an experimental branch.
+  Simple key-value pair file in the YAML format.  It allows to override branch
+  information for specific packages.  Most people leave this to the default,
+  unless they want to use a feature from an experimental branch. See the following
+  page for a description of its contents.
+    http://www.rock-robotics.org/stable/documentation/autoproj/advanced/importers.html
 
-- Influencing Autoproj ruby code:
-
-init.rb:     Write in this file customization code that will get executed
-	     before autoproj is loaded.
+init.rb:
+  Ruby script that contains customization code that will get executed before
+  autoproj is loaded.
 
 overrides.rb: 
-	     Write in this file customization code that will get
-	     executed after autoproj loaded.
+  Ruby script that contains customization code that will get executed after
+  autoproj is loaded, but before the build starts.
