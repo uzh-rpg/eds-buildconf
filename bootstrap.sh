@@ -12,7 +12,7 @@ if ! test -f $PWD/autoproj_bootstrap; then
         echo "download the following script yourself, and re-run this script"
         exit 1
     fi
-    $DOWNLOADER http://rock-robotics.org/autoproj_bootstrap
+    $DOWNLOADER http://rock-robotics.org/stable/autoproj_bootstrap
 fi
 
 echo "Do you want to use the git protocol to access the build configuration?"
