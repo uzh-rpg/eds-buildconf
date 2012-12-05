@@ -1,6 +1,7 @@
 #! /bin/sh
 
 CONF_REPO=rock/buildconf.git
+RUBY=ruby1.8
 
 set -e
 
@@ -30,9 +31,9 @@ do
 done
 
 if [ "$ANSWER" = "y" ]; then
-    ruby autoproj_bootstrap $@ git git://gitorious.org/$CONF_REPO push_to=git@gitorious.org:$CONF_REPO branch=master
+    $RUBY autoproj_bootstrap $@ git git://gitorious.org/$CONF_REPO push_to=git@gitorious.org:$CONF_REPO branch=master
 else
-    ruby autoproj_bootstrap $@ git http://git.gitorious.org/$CONF_REPO push_to=git@gitorious.org:$CONF_REPO branch=master
+    $RUBY autoproj_bootstrap $@ git http://git.gitorious.org/$CONF_REPO push_to=git@gitorious.org:$CONF_REPO branch=master
 fi
 
 if test "x$@" != "xlocaldev"; then
