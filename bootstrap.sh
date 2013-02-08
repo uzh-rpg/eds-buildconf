@@ -1,7 +1,7 @@
 #! /bin/sh
 
 CONF_REPO=rock/buildconf.git
-RUBY=ruby1.8
+RUBY=ruby1.9.1
 
 set -e
 
