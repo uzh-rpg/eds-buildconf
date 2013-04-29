@@ -58,8 +58,6 @@ else
 fi
 
 if test "x$@" != "xlocaldev"; then
-    . $PWD/env.sh
-    autoproj update
-    autoproj fast-build
+    $SHELL -c '. $PWD/env.sh; autoproj update; autoproj fast-build'
 fi
 
