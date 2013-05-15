@@ -15,6 +15,7 @@ layout:
    - rock.base
    - rock.toolchain
    - gui/vizkit
+   - drivers/orogen/arm_orion7p
 #  - rock.tutorials    # Uncomment to build all tutorials  
 
 # The layout section specifies what to build, and where to build it (as a
