@@ -7,6 +7,9 @@ package_sets:
    - gitorious: rock-toolchain/package_set
    - gitorious: rock/package_set
    - gitorious: rock-tutorials/package_set
+   # Uncomment to enable the Rock/ROS bridge
+   # You will also have to uncomment some lines in the layout below
+   # - gitorious: rock-ros/package_set
 
 # Layout. Note that the rock.base and orocos.toolchain sets are
 # imported by other rock sets.
@@ -14,7 +17,11 @@ layout:
    - rock.base
    - rock.toolchain
    - gui/vizkit
-#  - rock.tutorials    # Uncomment to build all tutorials  
+   # Uncomment to enable the Rock/ROS bridge
+   # You will also have to uncomment some lines in the package_sets above
+   # - rock.ros
+   # Uncomment to checkout and build all tutorials  
+   # - rock.tutorials    
 
 # The layout section specifies what to build, and where to build it (as a
 # subdirectory of the root installation directory). In the example below, all
