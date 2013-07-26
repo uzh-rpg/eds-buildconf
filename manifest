@@ -1,6 +1,6 @@
 #
 # Informations about the manifest of autoproj can be found here:
-# http://www.rock-robotics.org/documentation/autoproj/advanced/customization.html
+# http://www.rock-robotics.org/documentation/autoproj/customization.html
 #
 
 package_sets:
