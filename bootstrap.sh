@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CONF_REPO=rock/buildconf.git
+CONF_REPO=rock-core/buildconf.git
 RUBY=ruby
 
 set -e
@@ -52,9 +52,9 @@ do
 done
 
 if [ "$ANSWER" = "n" ]; then
-    $RUBY autoproj_bootstrap $@ git http://git.gitorious.org/$CONF_REPO push_to=git@gitorious.org:$CONF_REPO branch=master
+    $RUBY autoproj_bootstrap $@ git https://github.com/$CONF_REPO push_to=git@gitub.com:$CONF_REPO branch=master
 else
-    $RUBY autoproj_bootstrap $@ git git://gitorious.org/$CONF_REPO push_to=git@gitorious.org:$CONF_REPO branch=master
+    $RUBY autoproj_bootstrap $@ git git://github.com/$CONF_REPO push_to=git@github.com:$CONF_REPO branch=master
 fi
 
 if test "x$@" != "xlocaldev"; then
