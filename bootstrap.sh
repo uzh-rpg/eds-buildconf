@@ -3,8 +3,9 @@
 CONF_REPO=rock-core/buildconf.git
 RUBY=ruby
 
-if test -n "$1"; then
+if test -n "$1" && test "$1" != "dev" && test "$1" != "localdev"; then
     RUBY=$1
+    shift 1
     RUBY_USER_SELECTED=1
 fi
 
