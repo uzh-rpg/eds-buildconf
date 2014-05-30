@@ -3,6 +3,11 @@
 CONF_REPO=rock-core/buildconf.git
 RUBY=ruby
 
+if test -n "$1"; then
+    RUBY=$1
+    RUBY_USER_SELECTED=1
+fi
+
 set -e
 
 if ! which $RUBY > /dev/null 2>&1; then
@@ -10,18 +15,39 @@ if ! which $RUBY > /dev/null 2>&1; then
     echo "  sudo apt-get install ruby1.9.1 rubygems"
     exit 1
 fi
-if $RUBY --version | grep -q "1\.8"; then
-    if which ruby1.9.1 > /dev/null 2>&1; then
-        echo "ruby points to ruby 1.8. I am forcefully selecting ruby1.9.1 as the ruby executable"
-        echo "press ENTER to continue"
+
+
+if ! $RUBY --version | grep -q "1\.9\.3"; then
+    if test "$RUBY_USER_SELECTED" = "1"; then
+        cat <<EOMSG
+You selected $RUBY as the ruby executable, and it is not providing Ruby 1.9.3
+1.9.3 is still the recommended Ruby version for Rock, so use at your own risk
+
+Press ENTER to continue or CTRL+C to quit
+EOMSG
+        read LINE
+    elif which ruby1.9.1 > /dev/null 2>&1; then
+        cat <<EOMSG
+ruby --version reports
+  `$RUBY --version`
+The recommended version for Rock is ruby 1.9.3, and I detected that ruby1.9.1
+provides it. I am forcefully selecting it as the ruby executable. You can force
+the use of another Ruby executable by passing it on the command line, as e.g.
+  sh bootstrap.sh ruby2.0
+
+Press ENTER to continue with ruby1.9.1 and CTRL+C to quit
+EOMSG
         read LINE
         RUBY=ruby1.9.1
     else
-        echo "you are trying to bootstrap using Ruby 1.8. This is unsupported"
-        echo "please install Ruby 1.9.2 or later. On Debian and Ubuntu, it is done"
-        echo "with"
-        echo "  sudo apt-get install ruby1.9.1 rubygems"
-        echo "I am aborting now"
+        cat <<EOMSG
+ruby --version reports
+  `$RUBY --version`
+The recommended version for Rock is ruby 1.9.3. I don't know if you have it
+installed, and if you do what name it has. You will have to select a Ruby
+executable by passing it on the command line, as e.g.
+  sh bootstrap.sh ruby19
+EOMSG
         exit 1
     fi
 fi
