@@ -6,6 +6,7 @@
 package_sets:
    - github: rock-core/package_set
    - github: rock-core/rock-package_set
+   - gitorious: rock-tutorials/package_set
    # Uncomment to enable the Rock/ROS bridge
    # You will also have to uncomment some lines in the layout below
    # - gitorious: rock-ros/package_set
