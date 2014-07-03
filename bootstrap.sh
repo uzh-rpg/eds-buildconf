@@ -2,6 +2,7 @@
 
 CONF_REPO=rock-core/buildconf.git
 RUBY=ruby
+AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/stable/autoproj_bootstrap
 
 if test -n "$1" && test "$1" != "dev" && test "$1" != "localdev"; then
     RUBY=$1
@@ -63,7 +64,7 @@ if ! test -f $PWD/autoproj_bootstrap; then
         echo "download the following script yourself, and re-run this script"
         exit 1
     fi
-    $DOWNLOADER http://rock-robotics.org/stable/autoproj_bootstrap
+    $DOWNLOADER $AUTOPROJ_BOOTSTRAP_URL
 fi
 
 echo "Do you want to use the git protocol to access the build configuration ?"
