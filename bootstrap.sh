@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CONF_REPO=rock-core/buildconf.git
+CONF_URL=${CONF_URL:=http://github.com/rock-core/buildconf.git}
 RUBY=ruby
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/stable/autoproj_bootstrap
 
@@ -67,23 +67,24 @@ if ! test -f $PWD/autoproj_bootstrap; then
     $DOWNLOADER $AUTOPROJ_BOOTSTRAP_URL
 fi
 
-echo "Do you want to use the git protocol to access the build configuration ?"
-echo "If the protocol is blocked by your network answer with no. The default is yes."
+CONF_URL=${CONF_URL#*//}
+CONF_SITE=${CONF_URL%%/*}
+CONF_REPO=${CONF_URL#*/}
 
-# Check and interprete answer of "[y|n]"
-ANSWER="wrong"
-until test "$ANSWER" = "y" || test "$ANSWER" = "n" || test "$ANSWER" = ""
+PUSH_TO=git@$CONF_SITE:$CONF_REPO
+until [ -n "$GET_REPO" ]
 do
-    echo "Use git protocol? [y|n] (default: y)"
+    echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: git) "
     read ANSWER
     ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
+    case "$ANSWER" in
+        "ssh") GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
+        "http") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
+        "git"|"") GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
+    esac
 done
 
-if [ "$ANSWER" = "n" ]; then
-    $RUBY autoproj_bootstrap $@ git https://github.com/$CONF_REPO push_to=git@gitub.com:$CONF_REPO branch=master
-else
-    $RUBY autoproj_bootstrap $@ git git://github.com/$CONF_REPO push_to=git@github.com:$CONF_REPO branch=master
-fi
+$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO branch=master
 
 if test "x$@" != "xlocaldev"; then
     $SHELL -c '. $PWD/env.sh; autoproj update; autoproj fast-build'
