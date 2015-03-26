@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CONF_URL=${CONF_URL:=http://github.com/rock-core/buildconf.git}
+CONF_URL=${CONF_URL:=https://github.com/rock-core/buildconf.git}
 RUBY=ruby
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/stable/autoproj_bootstrap
 
@@ -74,13 +74,13 @@ CONF_REPO=${CONF_URL#*/}
 PUSH_TO=git@$CONF_SITE:$CONF_REPO
 until [ -n "$GET_REPO" ]
 do
-    echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: git) "
+    echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: http) "
     read ANSWER
     ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
     case "$ANSWER" in
         "ssh") GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
-        "http") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
-        "git"|"") GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
+        "http"|"") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
+        "git") GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
     esac
 done
 
