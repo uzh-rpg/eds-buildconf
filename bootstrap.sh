@@ -87,6 +87,6 @@ done
 $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO branch=master
 
 if test "x$@" != "xlocaldev"; then
-    $SHELL -c '. $PWD/env.sh; autoproj update; autoproj fast-build'
+    $SHELL -c '. $PWD/env.sh; autoproj update; autoproj osdeps; autoproj fast-build'
 fi
 
