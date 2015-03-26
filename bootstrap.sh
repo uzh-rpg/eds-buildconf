@@ -14,7 +14,7 @@ set -e
 
 if ! which $RUBY > /dev/null 2>&1; then
     echo "cannot find the ruby executable. On ubuntu, you should run"
-    echo "  sudo apt-get install ruby1.9.1 rubygems"
+    echo "  sudo apt-get install ruby1.9.1"
     exit 1
 fi
 
