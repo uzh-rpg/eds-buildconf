@@ -2,7 +2,7 @@
 
 CONF_URL=${CONF_URL:=https://github.com/rock-core/buildconf.git}
 RUBY=ruby
-AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/stable/autoproj_bootstrap
+AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
 
 if test -n "$1" && test "$1" != "dev" && test "$1" != "localdev"; then
     RUBY=$1
