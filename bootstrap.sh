@@ -15,41 +15,25 @@ set -e
 
 if ! which $RUBY > /dev/null 2>&1; then
     echo "cannot find the ruby executable. On ubuntu, you should run"
-    echo "  sudo apt-get install ruby1.9.1"
+    echo "  sudo apt-get install ruby2.1"
+    echo "or on Ubuntu 14.04"
+    echo "  sudo apt-get install ruby2.0"
     exit 1
 fi
 
+RUBY_VERSION_VALID=`$RUBY -e 'STDOUT.puts RUBY_VERSION.to_f >= 2.0'`
 
-if ! $RUBY --version | grep -q "1\.9\.3"; then
+if [ "x$RUBY_VERSION_VALID" != "xtrue" ]; then
     if test "$RUBY_USER_SELECTED" = "1"; then
-        cat <<EOMSG
-You selected $RUBY as the ruby executable, and it is not providing Ruby 1.9.3
-1.9.3 is still the recommended Ruby version for Rock, so use at your own risk
-
-Press ENTER to continue or CTRL+C to quit
-EOMSG
-        read LINE
-    elif which ruby1.9.1 > /dev/null 2>&1; then
-        cat <<EOMSG
-ruby --version reports
-  `$RUBY --version`
-The recommended version for Rock is ruby 1.9.3, and I detected that ruby1.9.1
-provides it. I am forcefully selecting it as the ruby executable. You can force
-the use of another Ruby executable by passing it on the command line, as e.g.
-  sh bootstrap.sh ruby2.0
-
-Press ENTER to continue with ruby1.9.1 and CTRL+C to quit
-EOMSG
-        read LINE
-        RUBY=ruby1.9.1
+        echo "You selected $RUBY as the ruby executable, and it is not providing Ruby >= 2.0"
     else
         cat <<EOMSG
 ruby --version reports
   `$RUBY --version`
-The recommended version for Rock is ruby 1.9.3. I don't know if you have it
+The supported version for Rock is ruby >= 2.0. I don't know if you have it
 installed, and if you do what name it has. You will have to select a Ruby
 executable by passing it on the command line, as e.g.
-  sh bootstrap.sh ruby19
+  sh bootstrap.sh ruby2.1
 EOMSG
         exit 1
     fi
