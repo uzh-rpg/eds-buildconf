@@ -2,7 +2,7 @@
 
 CONF_URL=${CONF_URL:=https://github.com/rock-core/buildconf.git}
 RUBY=ruby
-AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/stable/autoproj_bootstrap
+AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
 BOOTSTRAP_ARGS=
 
 if test -n "$1" && test "$1" != "dev" && test "$1" != "localdev"; then
@@ -14,8 +14,8 @@ fi
 set -e
 
 if ! which $RUBY > /dev/null 2>&1; then
-    echo "cannot find the ruby executable. On ubuntu, you should run"
-    echo "  sudo apt-get install ruby2.1"
+    echo "cannot find the ruby executable. On Ubuntu 16.04 and above, you should run"
+    echo "  sudo apt-get install ruby"
     echo "or on Ubuntu 14.04"
     echo "  sudo apt-get install ruby2.0"
     exit 1
@@ -72,6 +72,6 @@ done
 $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS
 
 if test "x$@" != "xlocaldev"; then
-    $SHELL -c '. $PWD/env.sh; autoproj update; autoproj osdeps; autoproj fast-build'
+    $SHELL -c '. $PWD/env.sh; autoproj update; autoproj osdeps; autoproj build'
 fi
 
