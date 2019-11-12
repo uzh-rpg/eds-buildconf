@@ -7,9 +7,13 @@ package_sets:
    - github: rock-core/package_set
    - github: rock-core/rock-package_set
    - github: rock-tutorials/tutorials-package_set
-   - github: rock-simulation/simulation-package_set
-   # Uncomment to enable the Rock/ROS bridge
-   # You will also have to uncomment some lines in the layout below
+   ## MARS Simulation, see https://github.com/rock-simulation/mars/wiki
+   # - github: rock-simulation/simulation-package_set
+   ## Gazebo Simulation, see
+   # https://www.rock-robotics.org/rock-and-syskit/basics/installation.html
+   # - github: rock-gazebo/simulation-package_set
+   ## Rock-ROS bridge
+   # You will also have to uncomment the 'rock.ros' line in the layout below
    # - gitorious: rock-ros/package_set
 
 # Layout. Note that the rock.base and orocos.toolchain sets are
