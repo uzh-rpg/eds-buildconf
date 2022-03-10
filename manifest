@@ -8,6 +8,8 @@ package_sets:
    - github: rock-core/rock-package_set
    - github: rock-tutorials/tutorials-package_set
    - github: envire/envire-package_set
+   - github: jhidalgocarrio/e2calib-package_set
+   - github: jhidalgocarrio/eds-package_set
    - github: rock-core/rock.vscode-package_set
    ## MARS Simulation, see https://github.com/rock-simulation/mars/wiki
    # - github: rock-simulation/simulation-package_set
