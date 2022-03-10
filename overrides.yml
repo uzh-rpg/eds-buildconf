@@ -13,3 +13,6 @@ overrides:
 
   - tools/logger:
       branch: rock-rc
+
+  - tools/pocolog_pybind:
+      branch: eds
