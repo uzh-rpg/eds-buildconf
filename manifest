@@ -26,13 +26,8 @@ layout:
    - rock.core
    - rock.vscode
    - rock.vscode.gems
-   - perception/orogen/apriltags
-   - drivers/orogen/camera_davis
-   - drivers/orogen/camera_prophesee
-   - drivers/orogen/dual_setup
-   - eds/orogen/eds_deployments
-   - slam/orogen/dso
-   - slam/orogen/eds
+   - e2calib
+   - eds
    - bundles/eds
    # Uncomment to enable the Rock/ROS bridge
    # You will also have to uncomment some lines in the package_sets above
