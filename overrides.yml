@@ -2,7 +2,14 @@
 # in the package sets. Below is an example to change the branch name for a given
 # package
 #
-# overrides:
-#   - rtt
-#     branch: test
-#  
+overrides:
+  - base/types:
+      github: jhidalgocarrio/base-types.git
+      branch: events
+
+  - base/orogen/types:
+      github: jhidalgocarrio/base-orogen-types.git
+      branch: events
+
+  - tools/logger:
+      branch: rock-rc
