@@ -14,4 +14,4 @@ docker run -ti -P --privileged -v /dev/bus/usb:/dev/bus/usb \
     -v /home/javi/.zshrc:/home/javi/.zshrc:ro \
     --name eds --hostname docker \
     --env="DISPLAY" \
-    --env="QT_X11_NO_MITSHM=1" -e DSUPPORT=1 eds:18.04 
+    --env="QT_X11_NO_MITSHM=1" -e DSUPPORT=1 eds:20.04
