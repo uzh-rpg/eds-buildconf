@@ -3,16 +3,13 @@
 # package
 #
 overrides:
-  - base/types:
-      github: jhidalgocarrio/base-types.git
-      branch: events
-
-  - base/orogen/types:
-      github: jhidalgocarrio/base-orogen-types.git
-      branch: events
-
   - tools/logger:
       branch: rock-rc
+
+  - slam/ceres_solver:
+      github: jhidalgocarrio/ceres-solver.git
+      branch: $ROCK_BRANCH
+      tag: eds
 
   - tools/pocolog_pybind:
       branch: eds
