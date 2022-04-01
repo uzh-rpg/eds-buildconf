@@ -16,9 +16,7 @@ If you use this work in your research, please cite the following paper:
 @Article{Hidalgo2022cvpr,
   author = {Hidalgo-Carri{\'{o}}, Javier and Gallego, Guillermo and Scaramuzza, Davide},
   title = {Event-aided Direct Sparse odometry},
-  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-  thumbnail = {imgs/hidalgo2022cvpr.png},
-  bibtex_show = {true},
+  journal = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
   year = {2022}
 }
 ```
