@@ -2,7 +2,7 @@
 
 <p align="left">
   <a href="https://rpg.ifi.uzh.ch/eds.html">
-    <img src="./doc/img/monitor_eds.png" alt="EDS" width="500"/>
+    <img src="./doc/img/monitor_eds.png" alt="EDS" width="640"/>
   </a>
 </p>
 
