@@ -6,12 +6,11 @@
   </a>
 </p>
 
-This is the code for the paper **Event-aided Direct Sparse Oodmetry** by
+This is the code for the paper [**Event-aided Direct Sparse Odometry**](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf) by
 [Javier Hidalgo-Carrió](https://jhidalgocarrio.github.io), [Guillermo Callego](https://sites.google.com/view/guillermogallego), and [Davide
 Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html):
 
-You can find a pdf of the paper
-[here](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf). If you use this work in your research, please cite the following paper:
+If you use this work in your research, please cite the following paper:
 
 ```bibtex
 @Article{Hidalgo2022cvpr,
