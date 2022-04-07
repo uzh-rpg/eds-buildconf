@@ -27,3 +27,11 @@ require 'autoproj/git_server_configuration'
 
 Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
 
+configuration_option('EDS_SELECTED_FLAVOR', 'string',
+    :default => 'master',
+    :possible_values => ['ceres', 'master'],
+    :doc => [
+        "Which flavor of EDS do you want to use ?",
+        "Stay with the default ('master') if you want to use EDS with DSO backend (recommended)",
+        "otherwise use ('ceres')"])
+
