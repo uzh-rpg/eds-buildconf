@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CONF_URL=${CONF_URL:=https://github.com/jhidalgocarrio/eds-buildconf.git}
+CONF_URL=${CONF_URL:=https://github.com/uzh-rpg/eds-buildconf.git}
 RUBY=ruby
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
 BOOTSTRAP_ARGS=
