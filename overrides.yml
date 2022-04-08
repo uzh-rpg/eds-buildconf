@@ -11,5 +11,10 @@ overrides:
         #      branch: $ROCK_BRANCH
         #      tag: eds
 
+  - slam/ceres_solver:
+      github: ceres-solver/ceres-solver.git
+      branch: $ROCK_BRANCH
+      tag: 2.0.0
+      
   - tools/pocolog_pybind:
       branch: eds
