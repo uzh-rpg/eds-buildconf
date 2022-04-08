@@ -6,10 +6,10 @@ overrides:
   - tools/logger:
       branch: rock-rc
 
-  - slam/ceres_solver:
-      github: jhidalgocarrio/ceres-solver.git
-      branch: $ROCK_BRANCH
-      tag: eds
+        #  - slam/ceres_solver:
+        #      github: jhidalgocarrio/ceres-solver.git
+        #      branch: $ROCK_BRANCH
+        #      tag: eds
 
   - tools/pocolog_pybind:
       branch: eds
