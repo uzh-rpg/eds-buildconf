@@ -26,7 +26,7 @@ This source code is GPLv3 license. See the LICENSE file for further details.
 Installation
 -------
 
-1. Make sure that the Ruby interpreter is installed on your machine. Rock requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This is tested with Ruby 2.7 on a Ubuntu 20.04
+1. Make sure that the Ruby interpreter is installed on your machine. Rock requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This is tested with Ruby 2.7 on Ubuntu 20.04
 
 2. Create and “cd” into the directory in which you want to install the toolchain.
 ```console
