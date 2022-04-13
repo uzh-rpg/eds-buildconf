@@ -180,7 +180,7 @@ docker@dev $ cd bundles/eds
 docker@eds (master) $ ruby scripts/gui/eds_visualization.rb --log /tmp/20220401-1015/updated/eds.0.log 
 ```
 
-Pocolog files (i.e.: eds.0.log) conversion to Rosbag is possible by running the pocolog2rosbag.py. It is explained in the [e2calib](https://github.com/uzh-rpg/e2calib/) repository.
+Pocolog files (i.e.: eds.0.log) conversion to Rosbag is possible by running the [pocolog2rosbag.py](https://github.com/jhidalgocarrio/bundles-e2calib/blob/master/scripts/pocolog/pocolog2rosbag.py). It is explained in the [e2calib](https://github.com/uzh-rpg/e2calib/) repository.
 
 
 Troubleshooting
