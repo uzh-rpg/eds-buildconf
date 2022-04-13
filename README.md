@@ -102,7 +102,7 @@ Please answer 'yes' or 'no' [no]
 
 the target operating system for Orocos/RTT (gnulinux, xenomai, or macosx) [gnulinux] 
 ```
-8. In any problem occurred the installation shoudl finish "successfully" 
+8. In case no problems occurred the installation shoudl finish "successfully" 
 
 9. Don't forget to source the environmental variables
 ```console
@@ -111,7 +111,7 @@ docker@dev:~$ source env.sh
 
 Dockerfile and Image
 -------
-All the steps described in Installation are in the Dockerfile. 
+All the steps described in the Installation are also in the [Dockerfile](Dockerfile). 
 
 
 Execution
