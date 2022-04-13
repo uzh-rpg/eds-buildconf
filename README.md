@@ -195,8 +195,6 @@ docker@dev $ sudo /etc/init.d/omniorb4-nameserver start
 
 The Event-to-Image Tracker: Source Code
 -------
-EDS adds Events to direct methods. You could simply have a look at this zip file, in case you are already familizised with direct methods and you just want to see the core source code of the event-based tracker that implement EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
-
 EDS source code is structure as follows:
 
 * [buildconf](https://github.com/uzh-rpg/eds-buildconf): is this reposity where the bootstrapping mechanism to install EDS is located.
@@ -204,6 +202,7 @@ EDS source code is structure as follows:
 * [slam/eds](https://github.com/uzh-rpg/slam-eds): this is the EDS C++ library.
 * [slam/orogen/eds](https://github.com/uzh-rpg/bundles-orogen-eds): this is the Task that builds a class with all the system's functionalities.
 
+EDS combines Events with classical frame-based direct methods. You can have a look at this [zip file](https://rpg.ifi.uzh.ch/eds/code.zip), in case you are already familiarized with direct methods and you just want to see the core part of the event-based tracker that implement EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
 
 Acknowledgements
 -------
