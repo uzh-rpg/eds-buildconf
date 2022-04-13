@@ -45,10 +45,52 @@ docker@dev:~$ sh bootstrap.sh
 ```
 5. Follow the installation guide and answer the questions. In case you hesitate choose the answer by default.
 
-6. Answer here 'true' in case you want to activate python. You need a python installation in your system for this.
+```console
+Connecting to www.rock-robotics.org (www.rock-robotics.org)|185.199.111.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 30078 (29K) [application/octet-stream]
+Saving to: 'autoproj_bootstrap'
+
+autoproj_bootstrap       100%[=================================>]  29.37K  --.-KB/s    in 0.007s  
+
+2022-04-13 15:58:06 (3.97 MB/s) - 'autoproj_bootstrap' saved [30078/30078]
+
+Which protocol do you want to use to access uzh-rpg/eds-buildconf.git on github.com? [git|ssh|http] (default: http) 
+
+
+So, what do you want ? (all, none or a comma-separated list of: os gem pip) [all] 
+Would you like autoproj to keep apt packages up-to-date? [yes] 
+
+The current directory is not empty, continue bootstrapping anyway ? [yes] 
+
+
+How should I interact with github.com (git, http, ssh)
+If you give one value, it's going to be the method used for all access
+If you give multiple values, comma-separated, the first one will be
+used for pulling and the second one for pushing. An optional third value
+will be used to pull from private repositories (the same than pushing is
+used by default) [http,ssh]
+
+Which flavor of Rock do you want to use ?
+Stay with the default ('master') if you want to use Rock on the most recent
+distributions (Ubuntu 16.04 and later). Use 'stable' only for 
+now officially unsupported distributions (Ubuntu 14.04) [master]
+```
+
+6. Answer here 'yes' in case you want to activate python. You need a python installation in your system for this.
+
+```console
+Do you want to activate python? [no] yes
+Select the path to the python executable [/usr/bin/python3] 
+```
 
 6. Select 'master' in case you want to build EDS with DSO backend or choose 'ceres' otherwise
 
+```console
+Which flavor of EDS do you want to use ?
+Stay with the default ('master') if you want to use EDS with DSO backend
+otherwise select ('ceres') [master] 
+```
 
 
 Dockerfile and Image
