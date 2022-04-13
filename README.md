@@ -159,9 +159,33 @@ docker@eds (master) $ ruby scripts/gui/eds_visualization.rb
   </a>
 </p>
 
+Log Files and Conversion to Rosbag
+-------
+
+The log files are created in the /tmp folder by default. There are named as /tmp/date, e.g.: /tmp/20220401-1015
+EDS is not real time. you can convert the log file to the correct time by running the followin command in your log folder
+```console
+docker@javi $ cd rock/dev
+docker@dev $ source env.sh
+docker@dev $ cd /tmp/20220401-1015
+docker@20220401-1015 $ rock-convert --use_sample-time eds.0.log 
+```
+
+The resulting eds.0.log file shoudl be in the newly created updated folder.
+You can replay the log files and visualize the results by doing 
+```console
+docker@javi $ cd rock/dev
+docker@dev $ source env.sh
+docker@dev $ cd bundles/eds
+docker@eds (master) $ ruby scripts/gui/eds_visualization.rb --log /tmp/20220401-1015/updated/eds.0.log 
+```
+
+Pocolog files (i.e.: eds.0.log) conversion to Rosbag is possible by running the pocolog2rosbag.py. It is explained in the [e2calib](https://github.com/uzh-rpg/e2calib/) repository.
+
+
 Troubleshooting
 -------
-In case you see CORBA related errors when runing the run_eds_log.rb. Restart the omniorb 
+In case you see CORBA related errors when runing the run_eds_log.rb. Restart the omniorb deamon
 
 ```console
 docker@dev $ sudo /etc/init.d/omniorb4-nameserver stop
