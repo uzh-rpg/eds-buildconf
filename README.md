@@ -34,7 +34,7 @@ docker@~S mkdir rock && cd rock && mkdir dev && cd dev
 docker@dev:~$ pwd
 /home/javi/rock/dev
 ```
-3. To build EDS, use this bootstrap.sh script. Save it in the folder you just created.
+3. To build EDS, use this [bootstrap.sh](bootstrap.sh) script. Save it in the folder you just created.
 
 ```console
 docker@dev:~$ wget https://raw.githubusercontent.com/uzh-rpg/eds-buildconf/master/bootstrap.sh
@@ -55,7 +55,8 @@ autoproj_bootstrap       100%[=================================>]  29.37K  --.-K
 
 2022-04-13 15:58:06 (3.97 MB/s) - 'autoproj_bootstrap' saved [30078/30078]
 
-Which protocol do you want to use to access uzh-rpg/eds-buildconf.git on github.com? [git|ssh|http] (default: http) 
+Which protocol do you want to use to access uzh-rpg/eds-buildconf.git on github.com?
+[git|ssh|http] (default: http) 
 
 
 So, what do you want ? (all, none or a comma-separated list of: os gem pip) [all] 
@@ -84,14 +85,29 @@ Do you want to activate python? [no] yes
 Select the path to the python executable [/usr/bin/python3] 
 ```
 
-6. Select 'master' in case you want to build EDS with DSO backend or choose 'ceres' otherwise
+7. Select 'master' in case you want to build EDS with DSO backend or type 'ceres' otherwise
 
 ```console
 Which flavor of EDS do you want to use ?
 Stay with the default ('master') if you want to use EDS with DSO backend
 otherwise select ('ceres') [master] 
 ```
+8. Choose the answers by default in the questions regarding RTT/Orocos. Select 'gnulinux' for Linux based systems
+```console
+Do you need compatibility with OCL ? (yes or no)
+New Rock users that don't need backward compatibility with legacy Orocos components
+probably want to say 'no'. Otherwise, say 'yes'.
+Saying 'yes' will significantly impact compilation time and the size of the resulting binaries
+Please answer 'yes' or 'no' [no]
 
+the target operating system for Orocos/RTT (gnulinux, xenomai, or macosx) [gnulinux] 
+```
+8. In any problem occurred the installation shoudl finish "successfully" 
+
+9. Don't forget to source the environmental variables
+```console
+docker@dev:~$ source env.sh
+```
 
 Dockerfile and Image
 -------
