@@ -21,11 +21,39 @@ If you use this work in your research, please cite the following paper:
 
 License
 -------
-This source code is GPLv3 license. See LICENSE file
+This source code is GPLv3 license. See LICENSE file for further details.
 
-Install
+Installation
 -------
 
+1. Make sure that the Ruby interpreter is installed on your machine. Rock requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This is tested with Ruby 2.7 on a Ubuntu 20.04
+
+2. Create and “cd” into the directory in which you want to install the toolchain.
+```console
+docker@~S mkdir rock && cd rock && mkdir dev && cd dev
+docker@dev:~$ pwd
+/home/javi/rock/dev
+```
+3. To build EDS, use this bootstrap.sh script. Save it in the folder you just created.
+
+```console
+docker@dev:~$ wget https://raw.githubusercontent.com/uzh-rpg/eds-buildconf/master/bootstrap.sh
+```
+4. In a console run
+```console
+docker@dev:~$ sh bootstrap.sh
+```
+5. Follow the installation guide and answer the questions. In case you hesitate choose the answer by default.
+
+6. Answer here 'true' in case you want to activate python. You need a python installation in your system for this.
+
+6. Select 'master' in case you want to build EDS with DSO backend or choose 'ceres' otherwise
+
+
+
+Dockerfile and Image
+-------
+All the steps described in Installation are in the Dockerfile. 
 
 
 Execution
@@ -36,107 +64,18 @@ Execution
   </a>
 </p>
 
+The Event-to-Image Tracker: Source Code
+-------
+EDS adds Events to direct methods. You could simply have a look at this zip file, in case you are already familizised with direct methods and you just want to see the core source code of the event-based tracker that implement EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
 
-<!---
-## Install
+Otherwise, the complete code is structure as follows:
 
-Dependencies:
+[buildconf](): this is this reposity where the bootstrapping mechanism to install EDS is located.
+[bundles/eds](): this is the bundles. Bundles are collections of all files needed to run a particular system. Those are configuration files, calibration files and script files for executing the binaries.
+[slam/eds](): this is the EDS C++ library.
+[slam/orogen/eds](): this is the Task that builds a class with all the system's functionalities.
 
-- [PyTorch](https://pytorch.org/get-started/locally/) >= 1.0
-- [NumPy](https://www.numpy.org/)
-- [OpenCV](https://opencv.org/)
-- [Matplotlib](https://matplotlib.org)
 
-### Install with Anaconda
-
-The installation requires [Anaconda3](https://www.anaconda.com/distribution/).
-You can create a new Anaconda environment with the required dependencies as
-follows (make sure to adapt the CUDA toolkit version according to your setup):
-
-```bash
-conda create -n E2DEPTH
-conda activate E2DEPTH
-conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
-conda install -c conda-forge opencv
-conda install -c conda-forge matplotlib
-```
-
-## Run
-
-- Download the pretrained model:
-
-```bash
-wget "http://rpg.ifi.uzh.ch/data/E2DEPTH/models/E2DEPTH_si_grad_loss_mixed.pth.tar" -O pretrained/E2DEPTH_si_grad_loss_mixed.pth.tar
-```
-
-- Download the test sequence in the DENSE dataset:
-
-```bash
-wget "http://rpg.ifi.uzh.ch/data/E2DEPTH/dataset/test_sequence_00_town10.zip" -O data/test_sequence_00_town10.zip
-```
-- Extract the data sequence:
-
-```bash
-unzip -q data/test_sequence_00_town10.zip -d data/test
-```
-
-Before running the depth prediction, make sure the conda environment is sourced:
-
-```bash
-conda activate E2DEPTH
-```
-
-- Run reconstruction:
-
-```bash
-python run_depth.py -c pretrained/E2DEPTH_si_grad_loss_mixed.pth.tar \
-  -i data/test/events/voxels \
-  --output_folder /tmp \
-  --save_numpy \
-  --show_event \
-  --display \
-  --save_inv_log \
-  --save_color_map
-```
-
-## Parameters
-
-Below is a description of the most important parameters:
-
-#### Main parameters
-
-#### Output parameters
-
-- ``--output_folder``: path of the output folder. If not set, the image reconstructions will not be saved to disk.
-- ``--dataset_name``: name of the output folder directory (default: 'reconstruction').
-
-#### Display parameters
-
-- ``--display`` (default: False): display the video reconstruction in real-time in an OpenCV window.
-- ``--show_events`` (default: False): show the input events side-by-side with the reconstruction. If ``--output_folder`` is set, the previews will also be saved to disk in ``/path/to/output/folder/events``.
-- ``--save_inv_log`` (default: False): compute (and then save) the inverse depth log instead of the depth log (default).
-- ``--save_color_map`` (default: False): use color conding to display depth. It uses matplotlib 'magma' color map. Grayscale depth otherwise.
-
-#### Display window
-
-You can select between direct or inverse depth, log or lineal, and grayscale or color visualization.
-
-![Display window](doc/img/e2depth_display_window.png)
-
-## DENSE dataset
-
-We provide Depth Estimation oN Synthetic Events (DENSE) Dataset that you can use to train your model.
-
-- [DENSE](http://rpg.ifi.uzh.ch/E2DEPTH.html)
-
-## Event Camera plugin
-
-You can extend DENSE or create your own dataset using our
-Event camera plugin. You can have a look [here](https://carla.readthedocs.io/en/latest/ref_sensors/#dvs-camera) for a detailed
-documentation.
-
-[![Carla with Events](doc/img/sensor_dvs.gif)](https://carla.readthedocs.io/en/latest/ref_sensors/#dvs-camera)
-
-## Acknowledgements
-
--->  
+Acknowledgements
+-------
+The Authors would like to thank [Simon Klenk](https://vision.in.tum.de/members/klenk) from TUM for the nice discussions about the potential of direct methods. We will like to thank our collaboration with [Prophesee](https://www.prophesee.ai) and Huawei.
