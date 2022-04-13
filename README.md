@@ -68,14 +68,14 @@ The Event-to-Image Tracker: Source Code
 -------
 EDS adds Events to direct methods. You could simply have a look at this zip file, in case you are already familizised with direct methods and you just want to see the core source code of the event-based tracker that implement EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
 
-Otherwise, the complete code is structure as follows:
+EDS source code is structure as follows:
 
-[buildconf](): this is this reposity where the bootstrapping mechanism to install EDS is located.
-[bundles/eds](): this is the bundles. Bundles are collections of all files needed to run a particular system. Those are configuration files, calibration files and script files for executing the binaries.
-[slam/eds](): this is the EDS C++ library.
-[slam/orogen/eds](): this is the Task that builds a class with all the system's functionalities.
+* [buildconf](https://github.com/uzh-rpg/eds-buildconf): is this reposity where the bootstrapping mechanism to install EDS is located.
+* [bundles/eds](https://github.com/uzh-rpg/bundles-eds): this is the bundles. Bundles are collections of all files needed to run a particular system. Those are configuration files, calibration files and script files for executing the binaries.
+* [slam/eds](https://github.com/uzh-rpg/slam-eds): this is the EDS C++ library.
+* [slam/orogen/eds](https://github.com/uzh-rpg/bundles-orogen-eds): this is the Task that builds a class with all the system's functionalities.
 
 
 Acknowledgements
 -------
-The Authors would like to thank [Simon Klenk](https://vision.in.tum.de/members/klenk) from TUM for the nice discussions about the potential of direct methods. We will like to thank our collaboration with [Prophesee](https://www.prophesee.ai) and Huawei.
+The Authors would like to thank [Simon Klenk](https://vision.in.tum.de/members/klenk) from TUM for the nice discussions about the potential of direct methods. We also thank our collaboration with [Prophesee](https://www.prophesee.ai) and Huawei.
