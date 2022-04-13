@@ -132,7 +132,7 @@ wget https://raw.githubusercontent.com/uzh-rpg/eds-buildconf/master/Dockerfile
 docker build -t <image_name> -f Dockerfile .
 ```
 
-There is also an alerady built docker images in here, that you ca just download and run your docker container
+There is also a built docker image in here, that you can just download and run your docker container
 with EDS installed.
 
 
