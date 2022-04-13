@@ -1,0 +1,16 @@
+sudo: required
+
+language: bash
+
+compiler:
+    - gcc
+
+services:
+    - docker
+
+install:
+    - docker build -t jhidalgocarrio/eds:20.04 -f Dockerfile .
+
+notifications:
+        email:
+            - havyhidalgo@gmail.com

@@ -1,10 +1,8 @@
+[![Build Status](https://travis-ci.org/jhidalgocarrio/image_analysis-exercise.svg?branch=master)](https://travis-ci.org/jhidalgocarrio/image_analysis-exercise)
+
 # Event-aided Direct Sparse Odometry
 
-<p align="left">
-  <a href="https://rpg.ifi.uzh.ch/eds.html">
-    <img src="./doc/img/monitor_eds.png" alt="EDS" width="640"/>
-  </a>
-</p>
+[![Direct Sparse Odometry](https://rpg.ifi.uzh.ch/eds/eds_all_characters_crop_youtube.png)](https://youtu.be/W0ho2FQmggU)
 
 This is the code for the paper [**Event-aided Direct Sparse Odometry**](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf) by
 [Javier Hidalgo-Carrió](https://jhidalgocarrio.github.io), [Guillermo Callego](https://sites.google.com/view/guillermogallego), and [Davide
@@ -21,7 +19,23 @@ If you use this work in your research, please cite the following paper:
 }
 ```
 
-## Code is coming soon...
+License
+-------
+This source code is GPLv3 license. See LICENSE file
+
+Install
+-------
+
+
+
+Execution
+-------
+<p align="left">
+  <a href="https://rpg.ifi.uzh.ch/eds.html">
+    <img src="./doc/img/monitor_eds.png" alt="EDS" width="640"/>
+  </a>
+</p>
+
 
 <!---
 ## Install
