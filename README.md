@@ -29,9 +29,9 @@ Installation
 1. Make sure that the Ruby interpreter is installed on your machine. Rock requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This is tested with Ruby 2.7 on Ubuntu 20.04.
 
 ```console
-docker@~$ ruby --version
+docker@javi$ ruby --version
 ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
-docker@~$ lsb_release -a
+docker@javi$ lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu 20.04.4 LTS
@@ -40,7 +40,7 @@ Codename:	focal
 ```
 2. Create and “cd” into the directory in which you want to install the toolchain.
 ```console
-docker@~S mkdir rock && cd rock && mkdir dev && cd dev
+docker@javiS mkdir rock && cd rock && mkdir dev && cd dev
 docker@dev$ pwd
 /home/javi/rock/dev
 ```
@@ -112,11 +112,14 @@ Please answer 'yes' or 'no' [no]
 
 the target operating system for Orocos/RTT (gnulinux, xenomai, or macosx) [gnulinux] 
 ```
-8. In case no problems occurred the installation shoudl finish "successfully" 
-
+8. In case no problems occurred the installation shoudl finish "successfully"
+```console
+updated environment
+Command finished successfully at 2022-04-13 16:47:58 +0200 (took 44 mins 20 secs)
+```
 9. Don't forget to source the environmental variables
 ```console
-docker@dev:~$ source env.sh
+docker@dev:$ source env.sh
 ```
 
 Dockerfile and Image
@@ -126,11 +129,45 @@ All the steps described in the Installation are also in the [Dockerfile](Dockerf
 
 Execution
 -------
+
+All the executing scripts are in bundles/eds directory of your installation.
+```console
+docker@dev $ cd bundles/eds
+```
+
+Download one dataset in log format, for example the atrium dataset:
+```console
+docker:eds (master) $ wget https://download.ifi.uzh.ch/rpg/eds/atrium/atrium.log -O /tmp/atrium.log
+```
+
+Run the [run_eds_log.rb](https://github.com/uzh-rpg/bundles-eds/blob/master/scripts/slam/eds/run_eds_logs.rb) script in one terminal
+```console
+docker@eds (master) $ ruby scripts/slam/eds/run_eds_logs.rb --dataset=atrium --log_type=davis /tmp/atrium.log
+```
+
+Open another terminal and visualize the progress with the [eds_visualizaton.rb](https://github.com/uzh-rpg/bundles-eds/blob/master/scripts/gui/eds_visualization.rb) script.
+```console
+docker@javi $ cd rock/dev
+docker@dev $ source env.sh
+docker@dev $ cd bundles/eds
+docker@eds (master) $ ruby scripts/gui/eds_visualization.rb 
+```
+
 <p align="left">
   <a href="https://rpg.ifi.uzh.ch/eds.html">
-    <img src="./doc/img/monitor_eds.png" alt="EDS" width="640"/>
+    <img src="./doc/img/atrium_eds.png" alt="EDS" width="640"/>
   </a>
 </p>
+
+Troubleshooting
+-------
+In case you see CORBA related errors when runing the run_eds_log.rb. Restart the omniorb 
+
+```console
+docker@dev $ sudo /etc/init.d/omniorb4-nameserver stop
+docker@dev $ sudo rm -f /var/lib/omniorb/*
+docker@dev $ sudo /etc/init.d/omniorb4-nameserver start
+```
 
 The Event-to-Image Tracker: Source Code
 -------
