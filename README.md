@@ -26,22 +26,32 @@ This source code is GPLv3 license. See the LICENSE file for further details.
 Installation
 -------
 
-1. Make sure that the Ruby interpreter is installed on your machine. Rock requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This is tested with Ruby 2.7 on Ubuntu 20.04
+1. Make sure that the Ruby interpreter is installed on your machine. Rock requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This is tested with Ruby 2.7 on Ubuntu 20.04.
 
+```console
+docker@~$ ruby --version
+ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux-gnu]
+docker@~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.4 LTS
+Release:	20.04
+Codename:	focal
+```
 2. Create and “cd” into the directory in which you want to install the toolchain.
 ```console
 docker@~S mkdir rock && cd rock && mkdir dev && cd dev
-docker@dev:~$ pwd
+docker@dev$ pwd
 /home/javi/rock/dev
 ```
 3. To build EDS, use this [bootstrap.sh](bootstrap.sh) script. Save it in the folder you just created.
 
 ```console
-docker@dev:~$ wget https://raw.githubusercontent.com/uzh-rpg/eds-buildconf/master/bootstrap.sh
+docker@dev:$ wget https://raw.githubusercontent.com/uzh-rpg/eds-buildconf/master/bootstrap.sh
 ```
 4. In a console run
 ```console
-docker@dev:~$ sh bootstrap.sh
+docker@dev:$ sh bootstrap.sh
 ```
 5. Follow the installation guide and answer the questions. In case you hesitate choose the answer by default.
 
