@@ -21,7 +21,7 @@ If you use this work in your research, please cite the following paper:
 
 License
 -------
-This source code is GPLv3 license. See LICENSE file for further details.
+This source code is GPLv3 license. See the LICENSE file for further details.
 
 Installation
 -------
