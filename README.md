@@ -124,7 +124,16 @@ docker@dev:$ source env.sh
 
 Dockerfile and Image
 -------
-All the steps described in the Installation are also in the [Dockerfile](Dockerfile). 
+All the steps described in the Installation are also written in a [Dockerfile](Dockerfile). 
+Run the following command line to build the EDS docker image
+
+```bash
+wget https://raw.githubusercontent.com/uzh-rpg/eds-buildconf/master/Dockerfile 
+docker build -t <image_name> -f Dockerfile .
+```
+
+There is also an alerady built docker images in here, that you ca just download and run your docker container
+with EDS installed.
 
 
 Execution
@@ -152,6 +161,8 @@ docker@dev $ source env.sh
 docker@dev $ cd bundles/eds
 docker@eds (master) $ ruby scripts/gui/eds_visualization.rb 
 ```
+
+It does not matter the order you run the scripts, visualization or running. The visualization will always wait until the running gives data. You should see something like this:
 
 <p align="left">
   <a href="https://rpg.ifi.uzh.ch/eds.html">
