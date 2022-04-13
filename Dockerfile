@@ -30,9 +30,21 @@ ENV SHELL /usr/bin/zsh
 SHELL ["/usr/bin/zsh", "-c"]
 
 RUN mkdir /home/javi/rock
+RUN mkdir /home/javi/rock/dev
 
 RUN git config --global user.email "havyhidalgo@gmail.com"
 RUN git config --global user.name "Javier Hidalgo-Carrió"
+
+# Install EDS
+WORKDIR /home/javi/rock/dev
+RUN wget https://raw.githubusercontent.com/rock-core/autoproj/stable/bin/autoproj_bootstrap
+
+RUN ruby autoproj_bootstrap git https://github.com/uzh-rpg/eds-buildconf.git push_to=git@github.com:uzh-rpg/eds-buildconf.git --no-interactive
+
+# Update and build 
+RUN source env.sh &&\
+    autoproj update --no-interactive &&\
+    autoproj build -k --no-interactive
 
 # Attaching point
 CMD /usr/bin/zsh
