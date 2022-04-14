@@ -26,7 +26,7 @@ This source code is GPLv3 license. See the LICENSE file for further details.
 Installation
 -------
 
-1. Make sure that the Ruby interpreter is installed on your machine. Rock requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This is tested with Ruby 2.7 on Ubuntu 20.04.
+1. Make sure that the Ruby interpreter is installed on your machine. [Rock](https://www.rock-robotics.org/) requires ruby 2.3 or higher, which is provided on Debian and Ubuntu by the ruby2.3 package.  This installation process is tested with Ruby 2.7 on Ubuntu 20.04.
 
 ```console
 docker@javi$ ruby --version
@@ -174,7 +174,7 @@ Log Files and Conversion to Rosbag
 -------
 
 The log files are created in the /tmp folder by default. There are named as /tmp/date, e.g.: /tmp/20220401-1015
-EDS is not real time. you can convert the log file to the correct time by running the followin command in your log folder
+EDS is not real time. You can convert the log file to the correct time by running the following command in your log folder
 ```console
 docker@javi $ cd rock/dev
 docker@dev $ source env.sh
@@ -182,7 +182,7 @@ docker@dev $ cd /tmp/20220401-1015
 docker@20220401-1015 $ rock-convert --use_sample-time eds.0.log 
 ```
 
-The resulting eds.0.log file shoudl be in the newly created updated folder.
+The resulting eds.0.log file should be in the newly created "updated" folder in /tmp/20220401-1015.
 You can replay the log files and visualize the results by doing 
 ```console
 docker@javi $ cd rock/dev
@@ -213,7 +213,7 @@ EDS source code is structure as follows:
 * [slam/eds](https://github.com/uzh-rpg/slam-eds): this is the EDS C++ library.
 * [slam/orogen/eds](https://github.com/uzh-rpg/bundles-orogen-eds): this is the Task that builds a class with all the system's functionalities.
 
-EDS combines Events with classical frame-based direct methods. You can have a look at this [zip file](https://rpg.ifi.uzh.ch/eds/code.zip), in case you are already familiarized with direct methods and you just want to see the core part of the event-based tracker that implement EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
+EDS combines Events with classical frame-based direct methods. You can have a look at this [zip file](https://rpg.ifi.uzh.ch/eds/code.zip), in case you are already familiar with direct methods and you just want to see the core part of the event-based tracker implemented in EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
 
 Acknowledgements
 -------
