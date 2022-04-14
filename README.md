@@ -1,20 +1,20 @@
 [![Build Status](https://travis-ci.org/jhidalgocarrio/image_analysis-exercise.svg?branch=master)](https://travis-ci.org/jhidalgocarrio/image_analysis-exercise)
 
-# Event-aided Direct Sparse Odometry
+# EDS: Event-aided Direct Sparse Odometry
 
 [![Direct Sparse Odometry](https://rpg.ifi.uzh.ch/eds/eds_all_characters_crop_youtube.png)](https://youtu.be/W0ho2FQmggU)
 
-This is the code for the paper [**Event-aided Direct Sparse Odometry**](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf) by
+This is the code for the paper [**Event-aided Direct Sparse Odometry**](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf) (**CVPR 2022 oral**) by  
 [Javier Hidalgo-Carrió](https://jhidalgocarrio.github.io), [Guillermo Callego](https://sites.google.com/view/guillermogallego), and [Davide
 Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html):
 
-If you use this work in your research, please cite the following paper:
+If you use this work in your research, please cite it as follows:
 
 ```bibtex
-@Article{Hidalgo2022cvpr,
-  author = {Hidalgo-Carri{\'{o}}, Javier and Gallego, Guillermo and Scaramuzza, Davide},
+@@InProceedings{Hidalgo2022cvpr,
+  author = {Javier Hidalgo-Carri{\'{o}} and Guillermo Gallego and Davide Scaramuzza},
   title = {Event-aided Direct Sparse odometry},
-  journal = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
   year = {2022}
 }
 ```
@@ -218,3 +218,13 @@ EDS combines Events with classical frame-based direct methods. You can have a lo
 Acknowledgements
 -------
 The Authors would like to thank [Simon Klenk](https://vision.in.tum.de/members/klenk) from TUM for the nice discussions about the potential of direct methods. We also thank our collaboration with [Prophesee](https://www.prophesee.ai) and Huawei.
+
+
+Additional Resources on Event Cameras
+-------
+* [Event-based Vision Survey](http://rpg.ifi.uzh.ch/docs/EventVisionSurvey.pdf)
+* [List of Event-based Vision Resources](https://github.com/uzh-rpg/event-based_vision_resources)
+* [Event Camera Simulator](http://rpg.ifi.uzh.ch/esim)
+* [RPG research page on Event Cameras](http://rpg.ifi.uzh.ch/research_dvs.html)
+* [TUB course](https://sites.google.com/view/guillermogallego/teaching/event-based-robot-vision)
+* [E2Calib: How to Calibrate Your Event Camera](https://github.com/uzh-rpg/e2calib)
