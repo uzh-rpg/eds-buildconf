@@ -173,8 +173,7 @@ It does not matter the order you run the scripts, visualization or running. The 
 Log Files and Conversion to Rosbag
 -------
 
-The log files are created in the /tmp folder by default. There are named as /tmp/date, e.g.: /tmp/20220401-1015
-EDS is not real time. You can convert the log file to the correct time by running the following command in your log folder
+The log files are created in the `/tmp` folder by default (You can change the folder [here](https://github.com/uzh-rpg/bundles-eds/blob/0952ca893178efdaefdde72a93672eeccedfadef/config/app.yml#L12)). The log files are named in a folder as `/tmp/date`, e.g.: `/tmp/20220401-1015` EDS is not real time. You can convert the log file to the correct time by running the following command in your log folder
 ```console
 docker@javi $ cd rock/dev
 docker@dev $ source env.sh
@@ -182,8 +181,8 @@ docker@dev $ cd /tmp/20220401-1015
 docker@20220401-1015 $ rock-convert --use_sample-time eds.0.log 
 ```
 
-The resulting eds.0.log file should be in the newly created "updated" folder in /tmp/20220401-1015.
-You can replay the log files and visualize the results by doing 
+The resulting `eds.0.log` file should be in the newly created `updated` folder in `/tmp/20220401-1015`.
+You can replay the log files and visualize the results with [eds_visuzalization.rb](https://github.com/uzh-rpg/bundles-eds/blob/master/scripts/gui/eds_visualization.rb) by doing 
 ```console
 docker@javi $ cd rock/dev
 docker@dev $ source env.sh
@@ -191,12 +190,12 @@ docker@dev $ cd bundles/eds
 docker@eds (master) $ ruby scripts/gui/eds_visualization.rb --log /tmp/20220401-1015/updated/eds.0.log 
 ```
 
-Pocolog files (i.e.: eds.0.log) conversion to Rosbag is possible by running the [pocolog2rosbag.py](https://github.com/jhidalgocarrio/bundles-e2calib/blob/master/scripts/pocolog/pocolog2rosbag.py). It is explained in the [e2calib](https://github.com/uzh-rpg/e2calib/) repository.
+Pocolog files (i.e.: `eds.0.log`) conversion to Rosbag is possible by running the [pocolog2rosbag.py](https://github.com/jhidalgocarrio/bundles-e2calib/blob/master/scripts/pocolog/pocolog2rosbag.py). It is explained in the [e2calib](https://github.com/uzh-rpg/e2calib/) repository.
 
 
 Troubleshooting
 -------
-In case you see CORBA related errors when runing the run_eds_log.rb. Restart the omniorb deamon
+In case you see CORBA related errors when runing the [run_eds_log.rb](https://github.com/uzh-rpg/bundles-eds/blob/master/scripts/slam/eds/run_eds_logs.rb). Restart the omniorb deamon
 
 ```console
 docker@dev $ sudo /etc/init.d/omniorb4-nameserver stop
