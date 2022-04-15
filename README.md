@@ -6,7 +6,7 @@
 
 This is the code for the paper [**Event-aided Direct Sparse Odometry**](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf) (**CVPR 2022 oral**) by  
 [Javier Hidalgo-Carrió](https://jhidalgocarrio.github.io), [Guillermo Callego](https://sites.google.com/view/guillermogallego), and [Davide
-Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html):
+Scaramuzza](http://rpg.ifi.uzh.ch/people_scaramuzza.html).
 
 If you use this work in your research, please cite it as follows:
 
@@ -18,6 +18,11 @@ If you use this work in your research, please cite it as follows:
   year = {2022}
 }
 ```
+
+Project Page and Dataset
+-------
+
+**[https://rpg.ifi.uzh.ch/eds.html](https://rpg.ifi.uzh.ch/eds.html)**
 
 License
 -------
