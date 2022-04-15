@@ -2,7 +2,7 @@
 
 # EDS: Event-aided Direct Sparse Odometry
 
-[![Direct Sparse Odometry](https://rpg.ifi.uzh.ch/eds/eds_all_characters_crop_youtube.png)](https://youtu.be/W0ho2FQmggU)
+[![Direct Sparse Odometry](https://rpg.ifi.uzh.ch/eds/eds_all_characters_crop_youtube.png)](https://youtu.be/ymnAWgfYj6Y)
 
 This is the code for the paper [**Event-aided Direct Sparse Odometry**](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf) (**CVPR 2022 oral**) by  
 [Javier Hidalgo-Carrió](https://jhidalgocarrio.github.io), [Guillermo Callego](https://sites.google.com/view/guillermogallego), and [Davide
