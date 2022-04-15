@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jhidalgocarrio/image_analysis-exercise.svg?branch=master)](https://travis-ci.org/jhidalgocarrio/image_analysis-exercise)
+![Build Status](https://github.com/uzh-rpg/eds-buildconf/actions/workflows/docker-image.yml/badge.svg)
 
 # EDS: Event-aided Direct Sparse Odometry
 
@@ -132,9 +132,11 @@ wget https://raw.githubusercontent.com/uzh-rpg/eds-buildconf/master/Dockerfile
 docker build -t <image_name> -f Dockerfile .
 ```
 
-There is also a built docker image in here, that you can just download and run your docker container
-with EDS installed.
+There is also a built docker image in [here](https://hub.docker.com/r/jhidalgocarrio/eds), that you can just download and run your docker container with EDS installed. You might pull the latest EDS docker image
 
+```bash
+docker pull jhidalgocarrio/eds
+```
 
 Execution
 -------
