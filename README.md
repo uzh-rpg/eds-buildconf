@@ -1,4 +1,4 @@
-![Build Status](https://github.com/uzh-rpg/eds-buildconf/actions/workflows/docker-image.yml/badge.svg)
+![Build Status](https://github.com/uzh-rpg/eds-buildconf/workflows/EDS_CI/badge.svg?branch=master)
 
 # EDS: Event-aided Direct Sparse Odometry
 
