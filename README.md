@@ -2,7 +2,7 @@
 
 # EDS: Event-aided Direct Sparse Odometry
 
-[![Direct Sparse Odometry](https://rpg.ifi.uzh.ch/eds/eds_all_characters_crop_youtube.png)](https://youtu.be/ymnAWgfYj6Y)
+[![Direct Sparse Odometry](https://rpg.ifi.uzh.ch/eds/thumbnail_youtube.png)](https://youtu.be/Y97Sg4YTRh0)
 
 This is the code for the paper [**Event-aided Direct Sparse Odometry**](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf) (**CVPR 2022 oral**) by  
 [Javier Hidalgo-Carrió](https://jhidalgocarrio.github.io), [Guillermo Callego](https://sites.google.com/view/guillermogallego), and [Davide
@@ -217,7 +217,7 @@ EDS source code is structure as follows:
 * [buildconf](https://github.com/uzh-rpg/eds-buildconf): is this reposity where the bootstrapping mechanism to install EDS is located.
 * [bundles/eds](https://github.com/uzh-rpg/bundles-eds): this is the bundles. Bundles are collections of all files needed to run a particular system. Those are configuration files, calibration files and script files for executing the binaries.
 * [slam/eds](https://github.com/uzh-rpg/slam-eds): this is the EDS C++ library.
-* [slam/orogen/eds](https://github.com/uzh-rpg/bundles-orogen-eds): this is the Task that builds a class with all the system's functionalities.
+* [slam/orogen/eds](https://github.com/uzh-rpg/slam-orogen-eds): this is the Task that builds a class with all the system's functionalities.
 
 EDS combines Events with classical frame-based direct methods. You can have a look at this [zip file](https://rpg.ifi.uzh.ch/eds/code.zip), in case you are already familiar with direct methods and you just want to see the core part of the event-based tracker implemented in EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
 
