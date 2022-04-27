@@ -234,3 +234,4 @@ Additional Resources on Event Cameras
 * [RPG research page on Event Cameras](http://rpg.ifi.uzh.ch/research_dvs.html)
 * [TUB course](https://sites.google.com/view/guillermogallego/teaching/event-based-robot-vision)
 * [E2Calib: How to Calibrate Your Event Camera](https://github.com/uzh-rpg/e2calib)
+* [Event Camera in the CARLA Simulator](https://carla.readthedocs.io/en/latest/ref_sensors/#dvs-camera)
