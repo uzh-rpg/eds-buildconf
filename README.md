@@ -148,7 +148,7 @@ Execution
 
 All the executing scripts are in bundles/eds directory of your installation.
 ```console
-docker@~ $ cd rock/dev
+docker@javi $ cd rock/dev
 docker@dev $ source env.sh
 docker@dev $ cd bundles/eds
 ```
