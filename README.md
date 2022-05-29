@@ -140,7 +140,7 @@ docker build -t <image_name> -f Dockerfile .
 There is also a built docker image in [here](https://hub.docker.com/r/jhidalgocarrio/eds), that you can just download and run your docker container with EDS installed. You might pull the latest EDS docker image
 
 ```bash
-docker pull jhidalgocarrio/eds
+docker pull jhidalgocarrio/eds:20.04
 ```
 
 Execution
