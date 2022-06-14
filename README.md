@@ -191,7 +191,7 @@ docker@20220401-1015 $ rock-convert --use_sample-time eds.0.log
 ```
 
 The resulting `eds.0.log` file should be in the newly created `updated` folder in `/tmp/20220401-1015`.
-You can replay the log files and visualize the results with [eds_visuzalization.rb](https://github.com/uzh-rpg/bundles-eds/blob/master/scripts/gui/eds_visualization.rb) by doing 
+You can replay the log files and visualize the results with [eds_visualization.rb](https://github.com/uzh-rpg/bundles-eds/blob/master/scripts/gui/eds_visualization.rb) by doing 
 ```console
 docker@javi $ cd rock/dev
 docker@dev $ source env.sh
