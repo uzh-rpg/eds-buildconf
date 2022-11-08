@@ -223,6 +223,38 @@ EDS source code is structure as follows:
 
 EDS combines Events with classical frame-based direct methods. You can have a look at this [zip file](https://rpg.ifi.uzh.ch/eds/code.zip), in case you are already familiar with direct methods and you just want to see the core part of the event-based tracker implemented in EDS. The code in the zip file contains comments to the equations in the [paper](http://rpg.ifi.uzh.ch/docs/CVPR22_Hidalgo.pdf).
 
+RPG Beamsplitter Design
+-------
+Describing the mechanical and electronic setup for combined Event Camera and RGB Camera with simultaneous trigger
+
+![Beamsplitter Design](doc/bs/beamsplitter_design.png)
+
+**Cameras:**
+
+* Prophesee EVALUATION KIT Gen4M 720P-CD
+* C-mount lens (70° FOV)
+* USB3 micro
+
+
+* [Flir BFS-U3-1226-C Blackfly S USB3 Color](https://www.flir.eu/products/blackfly-s-usb3/?model=BFS-U3-120S4C-CS)
+C-mount lens: [12mm Focal Length Lens, 1.1" Sensor Format 60.5 deg](https://www.edmundoptics.eu/p/11-12mm-f28-120-megapixel-ultra-low-distortion-lens/42164/)
+* 6-pin GPIO connector and cable with resistor
+* USB3 micro
+
+**Mirror:**
+
+* [75 x 75mm 50R/50T](https://www.edmundoptics.de/p/75-x-75mm-50r50t-vis-plate-beamsplitter/9260/)
+
+**IR Filter (optional)**
+
+* [IR filter](https://www.edmundoptics.de/p/25mm-diameter-ir-cut-off-filter/10801/) is requiered is you are using an extrenal infrarred tracking system such as Vicon or OptiTrack.
+
+**Case Design:**
+
+* The RPG beamsplitter is 3D printer using PLA material. You can download the STL files [here](doc/bs/stl_files.zip).
+
+
+
 Acknowledgements
 -------
 The Authors would like to thank [Simon Klenk](https://vision.in.tum.de/members/klenk) from TUM for the nice discussions about the potential of direct methods. We also thank our collaboration with [Prophesee](https://www.prophesee.ai) and Huawei.
