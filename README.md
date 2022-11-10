@@ -251,7 +251,7 @@ C-mount lens: [12mm Focal Length Lens, 1.1" Sensor Format 60.5 deg](https://www.
 
 **Case Design:**
 
-* The RPG beamsplitter is 3D printer using PLA material for the case and PolyFlex for the camare adaptors rings. You can download the [STL](doc/bs/stl_files.zip) or [Solidworkds](doc/bs/solidworks_files.zip).
+* The RPG beamsplitter is 3D printer using PLA material for the case and PolyFlex for the camare adaptors rings. You can download the [STL](doc/bs/stl_files.zip) or [Solidworks](doc/bs/solidworks_files.zip).
 
 
 
