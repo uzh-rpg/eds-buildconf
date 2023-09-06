@@ -22,7 +22,11 @@ If you use this work in your research, please cite it as follows:
 Project Page and Dataset
 -------
 
-**[https://rpg.ifi.uzh.ch/eds.html](https://rpg.ifi.uzh.ch/eds.html)**
+**General Page: [https://rpg.ifi.uzh.ch/eds.html](https://rpg.ifi.uzh.ch/eds.html)**
+
+**[EDS Dataset](https://rpg.ifi.uzh.ch/eds.html#dataset) and [Calibration Details](https://github.com/uzh-rpg/bundles-eds/tree/master/config/data/dual_setup)**
+
+**[Beamsplitter Design](https://github.com/uzh-rpg/eds-buildconf#rpg-beamsplitter-design)**
 
 License
 -------
